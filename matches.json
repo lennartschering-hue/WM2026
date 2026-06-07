@@ -1,0 +1,114 @@
+[
+    {
+        "match": "Mexiko-Südafrika",
+        "result": [
+            2,
+            1
+        ],
+        "points": {
+            "Ang": 0,
+            "Sus": 0,
+            "Mon": 0,
+            "Jul": 0,
+            "Alv": 0,
+            "Ann": 0,
+            "Hen": 0,
+            "Wil": 0,
+            "Dar": 0,
+            "Rei": 0,
+            "Pat": 0,
+            "Pau": 0,
+            "Len": 0,
+            "Leo": 0,
+            "Ott": 0,
+            "Sim": 0,
+            "Gus": 0,
+            "Alf": 0,
+            "Rud": 0
+        }
+    },
+    {
+        "match": "Südkorea-Tschechien",
+        "result": [
+            1,
+            1
+        ],
+        "points": {
+            "Ang": 2,
+            "Sus": 0,
+            "Mon": 0,
+            "Jul": 0,
+            "Alv": 0,
+            "Ann": 0,
+            "Hen": 1,
+            "Wil": 0,
+            "Dar": 0,
+            "Rei": 0,
+            "Pat": 0,
+            "Pau": 0,
+            "Len": 2,
+            "Leo": 0,
+            "Ott": 0,
+            "Sim": 2,
+            "Gus": 1,
+            "Alf": 0,
+            "Rud": 0
+        }
+    },
+    {
+        "match": "Kanada-Bosnien-Herzeg",
+        "result": [
+            0,
+            2
+        ],
+        "points": {
+            "Ang": 3,
+            "Sus": 3,
+            "Mon": 0,
+            "Jul": 2,
+            "Alv": 1,
+            "Ann": 0,
+            "Hen": 0,
+            "Wil": 0,
+            "Dar": 0,
+            "Rei": 0,
+            "Pat": 0,
+            "Pau": 0,
+            "Len": 1,
+            "Leo": 0,
+            "Ott": 0,
+            "Sim": 1,
+            "Gus": 2,
+            "Alf": 1,
+            "Rud": 2
+        }
+    },
+    {
+        "match": "USA-Paraguay",
+        "result": [
+            1,
+            0
+        ],
+        "points": {
+            "Ang": 1,
+            "Sus": 3,
+            "Mon": 3,
+            "Jul": 1,
+            "Alv": 0,
+            "Ann": 2,
+            "Hen": 2,
+            "Wil": 0,
+            "Dar": 2,
+            "Rei": 2,
+            "Pat": 2,
+            "Pau": 2,
+            "Len": 3,
+            "Leo": 3,
+            "Ott": 2,
+            "Sim": 2,
+            "Gus": 2,
+            "Alf": 3,
+            "Rud": 0
+        }
+    }
+]

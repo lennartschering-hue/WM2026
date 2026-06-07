@@ -1,0 +1,80 @@
+{
+    "standings": [
+        {
+            "player": "Ang",
+            "points": 6
+        },
+        {
+            "player": "Sus",
+            "points": 6
+        },
+        {
+            "player": "Len",
+            "points": 6
+        },
+        {
+            "player": "Gus",
+            "points": 5
+        },
+        {
+            "player": "Sim",
+            "points": 5
+        },
+        {
+            "player": "Alf",
+            "points": 4
+        },
+        {
+            "player": "Mon",
+            "points": 3
+        },
+        {
+            "player": "Jul",
+            "points": 3
+        },
+        {
+            "player": "Hen",
+            "points": 3
+        },
+        {
+            "player": "Leo",
+            "points": 3
+        },
+        {
+            "player": "Ann",
+            "points": 2
+        },
+        {
+            "player": "Dar",
+            "points": 2
+        },
+        {
+            "player": "Pau",
+            "points": 2
+        },
+        {
+            "player": "Rei",
+            "points": 2
+        },
+        {
+            "player": "Pat",
+            "points": 2
+        },
+        {
+            "player": "Ott",
+            "points": 2
+        },
+        {
+            "player": "Rud",
+            "points": 2
+        },
+        {
+            "player": "Alv",
+            "points": 1
+        },
+        {
+            "player": "Wil",
+            "points": 0
+        }
+    ]
+}
