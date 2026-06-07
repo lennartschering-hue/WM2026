@@ -74,7 +74,7 @@ Promise.all([
             resultsGrid.innerHTML += `
                 <div class="result-card">
                     <h3>${match.match}</h3>
-                    <p>${match.result}</p>
+                    <p>${match.result[0]} : ${match.result[1]}</p>
                 </div>
             `;
         });
