@@ -1,6 +1,6 @@
 Promise.all([
-    fetch("standings.json").then(r => r.json()),
-    fetch("matches.json").then(r => r.json())
+    fetch("standings.json").then(response => response.json()),
+    fetch("matches.json").then(response => response.json())
 ])
 
 .then(([standingsData, matchesData]) => {
@@ -8,10 +8,19 @@ Promise.all([
     console.log("standingsData:", standingsData);
     console.log("matchesData:", matchesData);
 
-    const standings = standingsData.standings;
-    const matches = matchesData;
+    // --------------------------------------------------
+    // Parse data safely
+    // --------------------------------------------------
 
+    const standings = standingsData.standings || [];
+    const matches = matchesData || [];
+
+    console.log("standings:", standings);
+    console.log("matches:", matches);
+
+    // --------------------------------------------------
     // HERO
+    // --------------------------------------------------
 
     document.getElementById("matchesPlayed").textContent =
         matches.length;
@@ -25,19 +34,24 @@ Promise.all([
     document.getElementById("matchesCount").textContent =
         matches.length;
 
-    document.getElementById("leaderName").textContent =
-        standings[0].player;
+    if (standings.length > 0) {
 
-    document.getElementById("leaderPoints").textContent =
-        standings[0].points;
+        document.getElementById("leaderName").textContent =
+            standings[0].player;
 
+        document.getElementById("leaderPoints").textContent =
+            standings[0].points;
+    }
+
+    // --------------------------------------------------
     // PODIUM
+    // --------------------------------------------------
 
     const podium = document.getElementById("topThree");
 
-    const medals = ["🥇","🥈","🥉"];
+    const medals = ["🥇", "🥈", "🥉"];
 
-    standings.slice(0,3).forEach((player,index)=>{
+    standings.slice(0, 3).forEach((player, index) => {
 
         podium.innerHTML += `
             <div class="podium-card">
@@ -48,23 +62,27 @@ Promise.all([
         `;
     });
 
+    // --------------------------------------------------
     // TABLE
+    // --------------------------------------------------
 
     const tbody =
         document.querySelector("#leaderboard tbody");
 
-    standings.forEach((player,index)=>{
+    standings.forEach((player, index) => {
 
         tbody.innerHTML += `
             <tr>
-                <td>${index+1}</td>
+                <td>${index + 1}</td>
                 <td>${player.player}</td>
                 <td>${player.points}</td>
             </tr>
         `;
     });
 
+    // --------------------------------------------------
     // RESULTS
+    // --------------------------------------------------
 
     const resultsGrid =
         document.getElementById("resultsGrid");
@@ -72,7 +90,7 @@ Promise.all([
     matches
         .slice(-12)
         .reverse()
-        .forEach(match=>{
+        .forEach(match => {
 
             resultsGrid.innerHTML += `
                 <div class="result-card">
@@ -82,4 +100,25 @@ Promise.all([
             `;
         });
 
+})
+
+.catch(error => {
+
+    console.error("Error loading data:", error);
+
+    document.body.insertAdjacentHTML(
+        "afterbegin",
+        `
+        <div style="
+            background:#dc2626;
+            color:white;
+            padding:15px;
+            text-align:center;
+            font-weight:bold;
+        ">
+            Error loading standings.json or matches.json.
+            Open F12 → Console.
+        </div>
+        `
+    );
 });
