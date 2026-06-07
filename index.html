@@ -1,35 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>WM 2026 Tippspiel</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container">
+    <!-- HERO -->
 
-    <h1>🏆 WM 2026 Tippspiel</h1>
+    <section class="hero">
 
-    <h2>Aktuelle Tabelle</h2>
+        <div class="overlay">
 
-    <table id="leaderboard">
-        <thead>
-            <tr>
-                <th>Platz</th>
-                <th>Spieler</th>
-                <th>Punkte</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+            <h1>🏆 WM 2026 Tippspiel</h1>
 
-</div>
+            <p>Road to the Final</p>
 
-<script src="app.js"></script>
+            <div class="hero-stats">
+
+                <div class="hero-card">
+                    <span id="matchesPlayed">0</span>
+                    <small>Matches</small>
+                </div>
+
+                <div class="hero-card">
+                    <span id="playerCount">0</span>
+                    <small>Players</small>
+                </div>
+
+                <div class="hero-card">
+                    <span id="leaderName">-</span>
+                    <small>Leader</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PODIUM -->
+
+    <section class="podium">
+
+        <h2>Top 3</h2>
+
+        <div id="topThree" class="podium-container"></div>
+
+    </section>
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h3 id="leaderPoints">0</h3>
+                <p>Leader Points</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="matchesCount">0</h3>
+                <p>Played Matches</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="playersCount2">0</h3>
+                <p>Players</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TABLE -->
+
+    <section class="leaderboard-section">
+
+        <h2>Leaderboard</h2>
+
+        <table id="leaderboard">
+
+            <thead>
+
+                <tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Points</th>
+                </tr>
+
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+    </section>
+
+    <!-- RESULTS -->
+
+    <section class="results">
+
+        <h2>Latest Results</h2>
+
+        <div id="resultsGrid" class="results-grid"></div>
+
+    </section>
+
+    <script src="app.js"></script>
 
 </body>
 </html>
