@@ -5,7 +5,10 @@ Promise.all([
 
 .then(([standingsData, matchesData]) => {
 
-    const standings = standingsData;
+    console.log("standingsData:", standingsData);
+    console.log("matchesData:", matchesData);
+
+    const standings = standingsData.standings;
     const matches = matchesData;
 
     // HERO
