@@ -6,7 +6,7 @@ Promise.all([
 .then(([standingsData, matchesData]) => {
 
     const standings = standingsData.standings;
-    const matches = matchesData.matches;
+    const matches = matchesData;
 
     // HERO
 
