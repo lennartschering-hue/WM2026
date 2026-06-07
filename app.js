@@ -1,149 +1,82 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+Promise.all([
+    fetch("standings.json").then(r => r.json()),
+    fetch("matches.json").then(r => r.json())
+])
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#0F172A;
-    color:#F8FAFC;
-}
+.then(([standingsData, matchesData]) => {
 
-.hero{
-    height:60vh;
+    const standings = standingsData.standings;
+    const matches = matchesData.matches;
 
-    background:
-        linear-gradient(
-            rgba(0,0,0,.65),
-            rgba(0,0,0,.65)
-        ),
-        url("images/hero.jpg");
+    // HERO
 
-    background-size:cover;
-    background-position:center;
+    document.getElementById("matchesPlayed").textContent =
+        matches.length;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    document.getElementById("playerCount").textContent =
+        standings.length;
 
-    text-align:center;
-}
+    document.getElementById("playersCount2").textContent =
+        standings.length;
 
-.hero h1{
-    font-size:4rem;
-    margin-bottom:10px;
-}
+    document.getElementById("matchesCount").textContent =
+        matches.length;
 
-.hero p{
-    font-size:1.2rem;
-    color:#CBD5E1;
-}
+    document.getElementById("leaderName").textContent =
+        standings[0].player;
 
-.hero-stats{
-    margin-top:40px;
+    document.getElementById("leaderPoints").textContent =
+        standings[0].points;
 
-    display:flex;
-    gap:20px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
+    // PODIUM
 
-.hero-card{
-    background:#1E293B;
-    padding:20px;
-    min-width:140px;
-    border-radius:15px;
-}
+    const podium = document.getElementById("topThree");
 
-.hero-card span{
-    display:block;
-    font-size:1.5rem;
-    font-weight:700;
-}
+    const medals = ["🥇","🥈","🥉"];
 
-section{
-    padding:60px 10%;
-}
+    standings.slice(0,3).forEach((player,index)=>{
 
-h2{
-    margin-bottom:25px;
-}
+        podium.innerHTML += `
+            <div class="podium-card">
+                <h3>${medals[index]}</h3>
+                <h2>${player.player}</h2>
+                <p>${player.points} Punkte</p>
+            </div>
+        `;
+    });
 
-.podium-container{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
+    // TABLE
 
-.podium-card{
-    background:#1E293B;
-    border-radius:15px;
-    padding:25px;
-    text-align:center;
-}
+    const tbody =
+        document.querySelector("#leaderboard tbody");
 
-.podium-card h3{
-    margin-bottom:10px;
-}
+    standings.forEach((player,index)=>{
 
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
+        tbody.innerHTML += `
+            <tr>
+                <td>${index+1}</td>
+                <td>${player.player}</td>
+                <td>${player.points}</td>
+            </tr>
+        `;
+    });
 
-.stat-card{
-    background:#1E293B;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-}
+    // RESULTS
 
-.stat-card h3{
-    font-size:2rem;
-}
+    const resultsGrid =
+        document.getElementById("resultsGrid");
 
-table{
-    width:100%;
-    border-collapse:collapse;
-}
+    matches
+        .slice(-12)
+        .reverse()
+        .forEach(match=>{
 
-thead{
-    background:#1E293B;
-}
+            resultsGrid.innerHTML += `
+                <div class="result-card">
+                    <h3>${match.match}</h3>
+                    <p>${match.result}</p>
+                </div>
+            `;
+        });
 
-th,td{
-    padding:15px;
-}
-
-tbody tr{
-    border-bottom:1px solid #334155;
-}
-
-.results-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-    gap:20px;
-}
-
-.result-card{
-    background:#1E293B;
-    padding:20px;
-    border-radius:15px;
-}
-
-@media(max-width:768px){
-
-    .hero h1{
-        font-size:2.3rem;
-    }
-
-    .podium-container{
-        grid-template-columns:1fr;
-    }
-
-    .stats-grid{
-        grid-template-columns:1fr;
-    }
-}
+});
