@@ -2,78 +2,78 @@
     "standings": [
         {
             "player": "Ang",
-            "points": 6
+            "points": 0
         },
         {
             "player": "Sus",
-            "points": 6
-        },
-        {
-            "player": "Len",
-            "points": 6
-        },
-        {
-            "player": "Gus",
-            "points": 5
-        },
-        {
-            "player": "Sim",
-            "points": 5
-        },
-        {
-            "player": "Alf",
-            "points": 4
+            "points": 0
         },
         {
             "player": "Mon",
-            "points": 3
+            "points": 0
         },
         {
             "player": "Jul",
-            "points": 3
-        },
-        {
-            "player": "Hen",
-            "points": 3
-        },
-        {
-            "player": "Leo",
-            "points": 3
-        },
-        {
-            "player": "Ann",
-            "points": 2
-        },
-        {
-            "player": "Dar",
-            "points": 2
-        },
-        {
-            "player": "Pau",
-            "points": 2
-        },
-        {
-            "player": "Rei",
-            "points": 2
-        },
-        {
-            "player": "Pat",
-            "points": 2
-        },
-        {
-            "player": "Ott",
-            "points": 2
-        },
-        {
-            "player": "Rud",
-            "points": 2
+            "points": 0
         },
         {
             "player": "Alv",
-            "points": 1
+            "points": 0
+        },
+        {
+            "player": "Ann",
+            "points": 0
+        },
+        {
+            "player": "Hen",
+            "points": 0
         },
         {
             "player": "Wil",
+            "points": 0
+        },
+        {
+            "player": "Dar",
+            "points": 0
+        },
+        {
+            "player": "Rei",
+            "points": 0
+        },
+        {
+            "player": "Pat",
+            "points": 0
+        },
+        {
+            "player": "Pau",
+            "points": 0
+        },
+        {
+            "player": "Len",
+            "points": 0
+        },
+        {
+            "player": "Leo",
+            "points": 0
+        },
+        {
+            "player": "Ott",
+            "points": 0
+        },
+        {
+            "player": "Sim",
+            "points": 0
+        },
+        {
+            "player": "Gus",
+            "points": 0
+        },
+        {
+            "player": "Alf",
+            "points": 0
+        },
+        {
+            "player": "Rud",
             "points": 0
         }
     ]
